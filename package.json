@@ -1,0 +1,16 @@
+{
+  "name": "rombex_webhoks",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "webhooks for rommbex technology",
+  "main": "index.js",
+  "scripts": {
+    "test": "start"
+  },
+  "author": "mfon jerry",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.1",
+    "firebase": "^11.0.2"
+  }
+}

@@ -45,7 +45,7 @@ app.post('/webhook', async (req, res) => {
             country: "USA"
         });
         // Log success and send acknowledgment
-        console.log(`Data updated for ID: ${id}`);
+        console.log(`Data updated for ID: `);
         res.status(200).send('Data updated successfully!');
     } catch (error) {
         console.error('Error updating Firebase:', error);

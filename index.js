@@ -19,12 +19,22 @@ app.post('/webhook', async (req, res) => {
     console.log('Webhook received!');
 
     // Extract payload from the webhook
-    const { id, updateData } = req.body; // Expecting 'id' and 'updateData' in the payload
-
-    if (!id || !updateData) {
-        return res.status(400).send('Invalid payload: "id" and "updateData" are required');
-    }
-
+  if (!payload.service || !payload.transaction || !payload.profile) {
+           return res.status(400).send('Invalid payload: Required fields are missing.');
+       }
+   
+       // Structure the data for Firebase
+       const dataToSave = {
+           service: payload.service,
+           type: payload.type,
+           method: payload.method,
+           wallet_key: payload.wallet_key,
+           country_code: payload.country_code,
+           currency: payload.currency,
+           profile: payload.profile,
+           transaction: payload.transaction,
+           received_at: new Date().toISOString() // Add a timestamp
+       };
     try {
         // Update data in Firebase Realtime Database
        

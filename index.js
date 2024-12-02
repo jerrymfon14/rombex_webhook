@@ -39,7 +39,7 @@ app.post('/webhook', async (req, res) => {
         // Update data in Firebase Realtime Database
        
     
-        await setDoc(doc(edd, "cities", "LA"), {
+        await setDoc(doc(edd, "payload_cities", "LA"), {
             name: "Los Angeles",
             state: "CA",
             country: "USA"
